@@ -1,0 +1,12 @@
+<% if @players.blank? %>
+<p>There are not any players :( </p>
+<% else %>
+<p>These are the current players on this system:</p>
+<ul id="players">
+<% @players.each do |p| %>
+  <li><%= link_to p.name, {action: show, id: p.id} %></li>
+  <li>p.name</li>
+<% end %>
+</ul>
+<% end %>
+<p><%= link_to 'Add new player', { action: 'new' } %></p>

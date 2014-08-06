@@ -1,0 +1,14 @@
+<h1>Add user:</h1>
+<%= form_for @player, url: {action: "create"}, html: {class: "hustej_formular"} do |f| %>
+    <% @player.errors.full_messages.each do |e| %>
+        <% flash[:error] = e %>
+    <% end %>
+
+    <p>Name:</p>
+    <%= f.text_field :name %>
+    <br>
+    <p>Email:</p>
+    <%= f.text_field :email %>
+    <br>
+    <%= f.submit "Create !" %>
+<% end %>
