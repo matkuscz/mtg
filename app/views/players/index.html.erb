@@ -5,7 +5,10 @@
     <ul id="players">
       <% @player.each do |p| %>
           <li><%= link_to p.name, {action: 'show', id: p.id} %>, <%= p.email %></li>
+          <p><%= link_to 'Edit player', edit_player_path(p) %></p>
+          <p><%= link_to 'Delete player', player_path(p), method: :delete, data: {confirm: 'Are you sure ?'} %></p>
       <% end %>
     </ul>
 <% end %>
-<p><%= link_to "Add new player", { action: 'new' } %></p>
+<p><%= link_to 'Add new player', { action: 'new' } %></p>
+<p><%= link_to 'Back to Homepage', root_path %></p>
