@@ -1,15 +1,17 @@
 Mtg::Application.routes.draw do
-  resources :players
-  resource :player
+  resources :players do
+    resources :decks
+  end
+
   root 'welcome#index'
 
 
   #get "welcome/index"
-  #get "deck/create"
-  #get "deck/index"
-  #get "deck/edit"
-  #get "deck/show"
-  #get "deck/new"
+  #get "decks/create"
+  #get "decks/index"
+  #get "decks/edit"
+  #get "decks/show"
+  #get "decks/new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

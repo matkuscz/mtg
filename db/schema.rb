@@ -22,9 +22,12 @@ ActiveRecord::Schema.define(version: 20140801014222) do
 
   create_table "decks", force: true do |t|
     t.string   "name",       null: false
+    t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "decks", ["player_id"], name: "index_decks_on_player_id", using: :btree
 
   create_table "players", force: true do |t|
     t.string   "name",       null: false

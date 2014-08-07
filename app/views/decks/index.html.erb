@@ -1,0 +1,9 @@
+<h1>Deck index</h1>
+<p>Listing decks of player: <%= @player.name %></p>
+
+<% @decks.each do |deck| %>
+<p>
+  <strong>Name of deck:</strong>
+  <%= deck.name %>
+</p>
+<% end %>

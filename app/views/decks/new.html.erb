@@ -1,0 +1,8 @@
+<h2>Deck creation:</h2>
+<p>Player: <%= @player.name %></p>
+
+<%= form_for ([@player, @deck]) do |f|%>
+  <p>Name:</p>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
